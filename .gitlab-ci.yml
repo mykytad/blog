@@ -20,5 +20,5 @@ stages:          # List of stages for jobs, and their order of execution
 rspec:   # This job runs in the test stage.
   stage: test    # It only starts when the job in the build stage completes successfully.
   script:
-    bundle exec rake db:setup RAILS_ENV=test
-    bundle exec rspec spec
+    - bundle exec rake db:setup RAILS_ENV=test
+    - bundle exec rspec spec
