@@ -1,5 +1,5 @@
-modul Visible
-	  extend ActiveSupport::Concern
+module Visible
+  extend ActiveSupport::Concern
 
   VALID_STATUSES = ['public', 'private', 'archived']
 
