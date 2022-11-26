@@ -75,3 +75,5 @@ end
 gem "sassc-rails"
 
 gem 'bootstrap'
+
+gem 'devise'
