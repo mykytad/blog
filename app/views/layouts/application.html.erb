@@ -8,29 +8,14 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= render 'layouts/shim' %>
   </head>
 
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
-        <%= link_to "my blog", root_path, id: "logo", class: "d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none" %>
-        <nav>
-          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li class="nav-item">
-              <%= link_to "Home", root_path, class: "nav-link px-2 link-secondary"%>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Help", "#", class: "nav-link px-2 link-secondary" %>
-            </li>
-          </ul>
-        </nav>
-        <div class="col-md-3 text-end">
-              <button tupy="button" class="btn btn-outline-primary">Log in</button>
-          </div>
-      </div>
-    </header>
+    <%= render 'layouts/header' %>
     <div class="container">
       <%= yield %>
+      <%= render 'layouts/footer' %>
     </div>
   </body>
 </html>
