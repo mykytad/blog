@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root "articles#index"
+  get 'help'    => 'static_pages#help'
+  get 'about'   => 'static_pages#about'
+  get 'contact' => 'static_pages#contact'
 
   resources :articles do
     resources :comments
