@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  get 'users/new'
   devise_for :users
   root "articles#index"
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
+  get 'signup'  => 'users#new'
 
   resources :articles do
     resources :comments
