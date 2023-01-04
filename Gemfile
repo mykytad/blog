@@ -77,3 +77,5 @@ gem "sassc-rails"
 gem 'bootstrap'
 
 gem 'devise'
+
+gem 'bcrypt'
