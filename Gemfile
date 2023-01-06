@@ -79,3 +79,5 @@ gem 'bootstrap'
 gem 'devise'
 
 gem 'bcrypt'
+
+gem 'gravtastic'
