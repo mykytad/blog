@@ -81,3 +81,5 @@ gem 'devise'
 gem 'bcrypt'
 
 gem 'gravtastic'
+
+gem 'carrierwave'
