@@ -82,4 +82,6 @@ gem 'bcrypt'
 
 gem 'gravtastic'
 
-gem 'carrierwave'
+gem 'carrierwave' 
+
+gem "mini_magick"
