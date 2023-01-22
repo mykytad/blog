@@ -1,4 +1,8 @@
 <% provide(:title, @user.name) %>
-<h1>
-  <%= @user.name %>
-</h1>
+<div class="col d-flex flex-column align-items-start gap-2">
+	<h2>
+		<%= gravatar_for @user %>
+		<%= @user.name %>
+	</h2>
+	<p class="text-muted"></p>
+</div>
