@@ -1,4 +1,13 @@
 GIT
+  remote: git@github.com:dzaporozhets/capistrano-unicorn-nginx.git
+  revision: f70fc54e4085559ad275994a7e0dd4f38d34c5bf
+  branch: master
+  specs:
+    capistrano-unicorn-nginx (5.2.0)
+      capistrano (>= 3.1)
+      sshkit (>= 1.2.0)
+
+GIT
   remote: git@github.com:dzaporozhets/net-ssh.git
   revision: ba511059d6bd20f24e024ad319a022e0f1350ecb
   branch: openssl-3-set-key-deprecation
@@ -105,9 +114,6 @@ GEM
     capistrano-secrets-yml (1.2.1)
       capistrano (>= 3.10)
       sshkit (>= 1.17.0)
-    capistrano-unicorn-nginx (4.1.0)
-      capistrano (>= 3.1)
-      sshkit (>= 1.2.0)
     capybara (3.37.1)
       addressable
       matrix
@@ -336,7 +342,7 @@ DEPENDENCIES
   capistrano-rails (~> 1.3)
   capistrano-rvm
   capistrano-secrets-yml
-  capistrano-unicorn-nginx (~> 4.1.0)
+  capistrano-unicorn-nginx!
   capybara
   carrierwave
   debug

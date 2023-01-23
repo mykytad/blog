@@ -7,6 +7,7 @@ require "capistrano/deploy"
 require 'capistrano/bundler'
 require "capistrano/secrets_yml"
 require 'capistrano/unicorn_nginx'
+require 'capistrano/rails/assets'
 require "capistrano/rails/migrations"
 require 'capistrano/rvm'
 
