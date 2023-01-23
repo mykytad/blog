@@ -4,9 +4,9 @@ require "capistrano/setup"
 # Include default deployment tasks
 require "capistrano/deploy"
 
-require "capistrano/secrets_yml"
 require 'capistrano/bundler'
-#require 'capistrano/unicorn_nginx'
+require "capistrano/secrets_yml"
+require 'capistrano/unicorn_nginx'
 require "capistrano/rails/migrations"
 require 'capistrano/rvm'
 
