@@ -86,6 +86,8 @@ gem 'carrierwave'
 
 gem "mini_magick"
 
+gem 'unicorn'
+
 group :development do
   # Deployment
   gem "capistrano", "~> 3.10", require: false
