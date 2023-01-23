@@ -1,3 +1,10 @@
+GIT
+  remote: git@github.com:dzaporozhets/net-ssh.git
+  revision: ba511059d6bd20f24e024ad319a022e0f1350ecb
+  branch: openssl-3-set-key-deprecation
+  specs:
+    net-ssh (7.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -181,7 +188,6 @@ GEM
       digest
       net-protocol
       timeout
-    net-ssh (7.0.1)
     nio4r (2.5.8)
     nokogiri (1.13.8-arm64-darwin)
       racc (~> 1.4)
@@ -334,7 +340,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   mini_magick
-  net-ssh (>= 6.0.2)
+  net-ssh!
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
   rspec-rails

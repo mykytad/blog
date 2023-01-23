@@ -93,7 +93,7 @@ group :development do
 end
 
 gem "capistrano-secrets-yml"
-gem 'net-ssh', '>= 6.0.2'
+gem 'net-ssh', git: 'git@github.com:dzaporozhets/net-ssh.git', branch: 'openssl-3-set-key-deprecation'
 gem 'ed25519', '>= 1.2', '< 2.0'
 gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 gem 'capistrano-unicorn-nginx', '~> 4.1.0'
