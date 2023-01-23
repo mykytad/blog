@@ -90,11 +90,12 @@ group :development do
   # Deployment
   gem "capistrano", "~> 3.10", require: false
   gem "capistrano-rails", "~> 1.3", require: false
-end
 
-gem "capistrano-secrets-yml"
-gem 'net-ssh', git: 'git@github.com:dzaporozhets/net-ssh.git', branch: 'openssl-3-set-key-deprecation'
-gem 'ed25519', '>= 1.2', '< 2.0'
-gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
-gem 'capistrano-unicorn-nginx', '~> 4.1.0'
-gem "capistrano-rvm"
+  gem "capistrano-secrets-yml"
+  gem 'net-ssh', git: 'git@github.com:dzaporozhets/net-ssh.git', branch: 'openssl-3-set-key-deprecation'
+  gem 'ed25519', '>= 1.2', '< 2.0'
+  gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
+  gem 'capistrano-unicorn-nginx', '~> 4.1.0'
+  gem "capistrano-rvm"
+  gem 'capistrano-bundler', '~> 2.0'
+end
