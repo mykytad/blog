@@ -94,10 +94,10 @@ group :development do
   gem "capistrano-rails", "~> 1.3", require: false
 
   gem "capistrano-secrets-yml"
-  gem 'net-ssh', git: 'git@github.com:dzaporozhets/net-ssh.git', branch: 'openssl-3-set-key-deprecation'
+  gem 'net-ssh', git: 'https://github.com/dzaporozhets/net-ssh', branch: 'openssl-3-set-key-deprecation'
   gem 'ed25519', '>= 1.2', '< 2.0'
   gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
-  gem 'capistrano-unicorn-nginx', git: 'git@github.com:dzaporozhets/capistrano-unicorn-nginx.git', branch: 'master'
+  gem 'capistrano-unicorn-nginx', git: 'https://github.com/dzaporozhets/capistrano-unicorn-nginx', branch: 'master'
   gem "capistrano-rvm"
   gem 'capistrano-bundler', '~> 2.0'
 end
