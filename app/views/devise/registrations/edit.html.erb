@@ -1,7 +1,7 @@
 <main class="text-center form-signin w-100 m-auto">
   <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
 
@@ -33,10 +33,10 @@
       <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control" %><br/>
       <%= f.label :current_password %>
     </div>
-    <div class="field form-floating">
-      <%= f.file_field :avatars %><br/>
-    </div>
 
+    <%= render partial: 'avatars/form',
+           object: @user,
+           as: :avatarable %>
 
     <div class="actions">
       <%= f.submit "Update", class:" w-100 btn btn-outline-success" %>

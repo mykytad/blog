@@ -82,6 +82,10 @@ gem 'bcrypt'
 
 gem 'gravtastic'
 
+gem "paperclip"
+
 gem 'carrierwave' 
 
 gem "mini_magick"
+
+gem 'avatars_for_rails'
