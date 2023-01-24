@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  acts_as_avatarable
+  #acts_as_avatarable
 
   include Gravtastic
   gravtastic
