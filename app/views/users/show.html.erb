@@ -1,6 +1,7 @@
 <% provide(:title, @user.name) %>
 <div class="col d-flex flex-column align-items-start gap-2">
 	<h2>
+		<img src="/images/<%= @avatar %>.png" alt="#">
 		<!-- <%= gravatar_for @user %> -->
 		<%= @user.name %>
 	</h2>

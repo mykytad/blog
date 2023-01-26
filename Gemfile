@@ -86,6 +86,6 @@ gem "paperclip"
 gem 'carrierwave' 
 gem "mini_magick"
 gem 'avatarly'
-# gem 'jekyll-avatar'
 gem 'dragonfly'
 gem 'avatar_magick'
+gem 'letter_avatar'
