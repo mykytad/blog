@@ -85,4 +85,7 @@ gem 'gravtastic'
 gem "paperclip"
 gem 'carrierwave' 
 gem "mini_magick"
-gem 'avatars_for_rails'
+gem 'avatarly'
+# gem 'jekyll-avatar'
+gem 'dragonfly'
+gem 'avatar_magick'

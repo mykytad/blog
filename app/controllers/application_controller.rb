@@ -1,6 +1,11 @@
 class ApplicationController < ActionController::Base
+
 	def index		
 	end
+	
+	# LetterAvatar
+	include LetterAvatar::AvatarHelper
+
 	before_action :configure_permitted_parameters, if: :devise_controller?
 	protected
 	def configure_permitted_parameters
