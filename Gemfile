@@ -71,15 +71,20 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
+# style
 gem "sassc-rails"
-
 gem 'bootstrap'
 
+# authentication
 gem 'devise'
 
 gem 'bcrypt'
 
+# image
+gem "paperclip"
+gem 'carrierwave' 
+gem "mini_magick"
+gem 'avatarly'
 gem 'gravtastic'
 
 gem 'carrierwave'
