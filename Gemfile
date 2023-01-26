@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.0.0"
+ruby "3.1.3"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
@@ -85,3 +85,24 @@ gem "paperclip"
 gem 'carrierwave' 
 gem "mini_magick"
 gem 'avatarly'
+gem 'gravtastic'
+
+gem 'carrierwave'
+
+gem "mini_magick"
+
+gem 'unicorn'
+
+group :development do
+  # Deployment
+  gem "capistrano", "~> 3.10", require: false
+  gem "capistrano-rails", "~> 1.3", require: false
+
+  gem "capistrano-secrets-yml"
+  gem 'net-ssh', git: 'https://github.com/dzaporozhets/net-ssh', branch: 'openssl-3-set-key-deprecation'
+  gem 'ed25519', '>= 1.2', '< 2.0'
+  gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
+  gem 'capistrano-unicorn-nginx', git: 'https://github.com/dzaporozhets/capistrano-unicorn-nginx', branch: 'master'
+  gem "capistrano-rvm"
+  gem 'capistrano-bundler', '~> 2.0'
+end
