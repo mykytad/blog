@@ -37,3 +37,7 @@
 /public/images/*
 !/public/images/
 !/public/images/.keep
+
+/public/uploads/*
+!/public/uploads/
+!/public/uploads/.keep

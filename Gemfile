@@ -81,11 +81,7 @@ gem 'devise'
 gem 'bcrypt'
 
 # image
-gem 'gravtastic'
 gem "paperclip"
 gem 'carrierwave' 
 gem "mini_magick"
 gem 'avatarly'
-gem 'dragonfly'
-gem 'avatar_magick'
-gem 'letter_avatar'
