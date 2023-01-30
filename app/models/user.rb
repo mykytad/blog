@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-
+  has_many :articles  #foreign key - artisle_id
   include Gravtastic
   gravtastic
 
