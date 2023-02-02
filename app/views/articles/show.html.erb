@@ -5,24 +5,14 @@
     <%= image_tag @article.image.url(:large), class: "img" if @article.image? %>
     <p class="article_paragraph"><%= @article.body %></p>
   </div>
+ <% if @article.user_id == current_user.id %>
 
   <div class="btn-group">
     <%= link_to "Edit", edit_article_path(@article), class:"btn btn-outline-primary" %>
-    <%= link_to "Destroy", article_path(@article), class:"btn btn-outline-danger", data: {
-      turbo_method: :delete,
-      turbo_confirm: "Are you sure?" } %> <!--class:"nav-link p-0 text-muted"-->
-  </div>
+    <%= link_to "Destroy", article_path(@article), class:"btn btn-outline-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?" } %> 
+  </div> 
+<% end %>
 
-  <!-- <ul class="nav flex-column">
-    <li class="nav-item mb-2">
-      <%= link_to "Edit", edit_article_path(@article), class:"nav-link p-0 text-muted" %>
-    </li>
-    <li class="nav-item mb-2">
-      <%= link_to "Destroy", article_path(@article), class:"nav-link p-0 text-muted", data: {
-      turbo_method: :delete,
-      turbo_confirm: "Are you sure?" } %>
-    </li>
-  </ul>-->
 </div>
 
 <div class="comment">
