@@ -11,9 +11,12 @@
       </p>
       <%= comment.body %>
     </p>
-
-    <p class="comment_btn">
-      <%= link_to "Destroy Comment", [comment.article, comment], class:"btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-    </p>
+    <% if current_user %>
+      <% if comment.user_id == current_user.id %>
+        <p class="comment_btn">
+          <%= link_to "Destroy Comment", [comment.article, comment], class:"btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        </p>
+      <%end%>
+    <%end%>
   </div>
 <% end %>
