@@ -11,8 +11,8 @@
       </p>
       <%= comment.body %>
     </p>
-    <% if current_user %>
-      <% if comment.user_id == current_user.id %>
+    <% if current_user %> <!-- проверяет авторезирован ли пользеватель  -->
+      <% if comment.user_id == current_user.id %> <!-- если пользеватель авторезирован проверяет он ли сделал коментарий -->
         <p class="comment_btn">
           <%= link_to "Destroy Comment", [comment.article, comment], class:"btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
         </p>
