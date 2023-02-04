@@ -1,7 +1,8 @@
 <% provide(:title, @user.name) %>
-<div class="col d-flex flex-column align-items-start gap-2">
-	<h2>
-		<%= gravatar_for @user %>
+<div class="col d-flex flex-column align-items-start gap-2 row align-items-center">
+	<h2 class="user_header">
+		<img src="/images/<%= @avatar %>.png" alt="<%=@user.name%>" class="rounded-circle">
+		<!-- <%= gravatar_for @user %> -->
 		<%= @user.name %>
 	</h2>
 	<p class="text-muted"></p>

@@ -1,4 +1,4 @@
-image: ruby:3.0.0
+image: ruby:3.1.3
 
 # Cache gems in between builds
 cache:

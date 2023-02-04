@@ -33,4 +33,13 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/public/images/*
+!/public/images/
+!/public/images/.keep
+
+/public/uploads/*
+!/public/uploads/
+!/public/uploads/.keep
+
 config/secrets.yml
