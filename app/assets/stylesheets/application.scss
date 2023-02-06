@@ -14,6 +14,9 @@
   margin-bottom: 5px;
 }
 
+.article{
+ margin-bottom: 70px; 
+}
 .img{
   display: block;
   margin-bottom: 10px;
@@ -21,7 +24,16 @@
 .article_paragraph{
   text-align: justify;
 }
-
+.articl_comments p{
+margin: 0;
+}
+.comment_heading{
+  font-style: oblique;
+}
+.comment_btn{
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
 .main_btn{
   margin-bottom: 5px;
 }

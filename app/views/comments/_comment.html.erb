@@ -1,18 +1,22 @@
 <% unless comment.archived? %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
+  <div class="articl_comments">
+    <p>
+      <em>Commenter:</em>
+      <%= comment.commenter %>
+    </p>
 
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-
-  <p>
-    <%= link_to "Destroy Comment", [comment.article, comment], data: {
-                  turbo_method: :delete,
-                  turbo_confirm: "Are you sure?"
-                } %>
-  </p>
-<% end %>	
+    <p>
+      <p class="comment_heading">
+        Comment:
+      </p>
+      <%= comment.body %>
+    </p>
+    <% if current_user %> <!-- проверяет авторезирован ли пользеватель  -->
+      <% if comment.user_id == current_user.id %> <!-- если пользеватель авторезирован проверяет он ли сделал коментарий -->
+        <p class="comment_btn">
+          <%= link_to "Destroy Comment", [comment.article, comment], class:"btn btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        </p>
+      <%end%>
+    <%end%>
+  </div>
+<% end %>
