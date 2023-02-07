@@ -2,6 +2,12 @@ require 'rails_helper'
 
 RSpec.feature "create article", type: :feature do
   it 'creates a new article with valid attributes' do
+    visit new_user_session_path
+    User.create(name:"Test", email:"test@gmail.com", password:"111111")
+    fill_in :email, with: "test@gmail.com"
+    fill_in :password, with: "111111"
+    click_button "Log in"
+
     visit new_article_path
     fill_in :article_title, with: "My first trip to Alaska"
     fill_in :article_body, with: "dsadsa dasd asd asd as d dsadasd as dasa"

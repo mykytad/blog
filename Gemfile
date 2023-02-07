@@ -87,14 +87,11 @@ gem "mini_magick"
 gem 'avatarly'
 gem 'gravtastic'
 
-gem 'carrierwave'
-
-gem "mini_magick"
-
+# Deployment
 gem 'unicorn'
 
 group :development do
-  # Deployment
+  
   gem "capistrano", "~> 3.10", require: false
   gem "capistrano-rails", "~> 1.3", require: false
 
