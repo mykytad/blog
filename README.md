@@ -1,24 +1,11 @@
-# README
+BLOG 
+http://161.35.206.180
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+My first project on rails.
+Рere I get acquainted with the rail and its capabilities.
 
-* Ruby version
+We are gonna deploy the app with https://github.com/capistrano/capistrano/blob/master/README.md
+We are using this tutorial https://blog.appsignal.com/2022/07/13/deploy-your-ruby-on-rails-app-using-capistrano.html
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+bundle exec cap production deploy
