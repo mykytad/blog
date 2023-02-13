@@ -76,7 +76,7 @@ gem "sassc-rails"
 gem 'bootstrap'
 
 # authentication
-gem 'devise'
+gem 'devise', git: 'https://github.com/heartcombo/devise', branch: 'main'
 
 gem 'bcrypt'
 
