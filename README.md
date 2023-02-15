@@ -9,4 +9,4 @@ We are gonna deploy the app with https://github.com/capistrano/capistrano/blob/m
 
 We are using this tutorial https://blog.appsignal.com/2022/07/13/deploy-your-ruby-on-rails-app-using-capistrano.html
 
-bundle exec cap production deploy
+    bundle exec cap production deploy
