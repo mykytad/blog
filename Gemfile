@@ -90,6 +90,9 @@ gem 'gravtastic'
 # Deployment
 gem 'unicorn'
 
+#linter
+gem 'rubocop-rails', require: false
+
 group :development do
   
   gem "capistrano", "~> 3.10", require: false
@@ -103,3 +106,4 @@ group :development do
   gem "capistrano-rvm"
   gem 'capistrano-bundler', '~> 2.0'
 end
+
