@@ -19,11 +19,12 @@ RSpec.feature "create article", type: :feature do
     fill_in :article_body, with: "dsadsa dasd asd asd as d dsadasd as dasa"
     click_button "Create Article"
 
-    fill_in :comment_commenter, with: "John"
+    # fill_in :comment_commenter, with: "John"
     fill_in :comment_body, with: "Thanks for sharing!"
     click_button "Create Comment"
 
-    expect(body).to have_content 'John'
+    expect(body).to have_link 'Destroy Comment'
+    # expect(body).to have_content 'John'
     expect(body).to have_content 'Thanks for sharing'
   end
 
