@@ -1,11 +1,4 @@
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
-  <p>
-    <% if current_user %>
-      <%= form.label :commenter %><br>
-      <%= form.text_field :commenter, class:"form-control" %>
-    <% end %>
-    
-  </p>
 
   <p>
     <%= form.text_area :body, class:"form-control" %>
@@ -17,7 +10,6 @@
   </p>
 
   <p>
-    <%= form.submit class:"btn btn-primary"%>
+    <%= form.submit class:"btn btn-primary" %>
   </p>
-
 <% end %>
