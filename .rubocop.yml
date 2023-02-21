@@ -2,3 +2,9 @@ inherit_from: .rubocop_todo.yml
 
 StringLiterals:
   Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
