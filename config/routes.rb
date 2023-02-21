@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "help"    => "static_pages#help"
   get "about"   => "static_pages#about"
   get "contact" => "static_pages#contact"
+  #admin page
   get "admin_comments" => "admin_pages#comments"
   get "admin_articles" => "admin_pages#articles"
   get "admin_users" => "admin_pages#users"
