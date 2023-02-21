@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   get "about"   => "static_pages#about"
   get "contact" => "static_pages#contact"
   #admin page
-  get "admin_comments" => "admin_pages#comments"
-  get "admin_articles" => "admin_pages#articles"
-  get "admin_users" => "admin_pages#users"
+  get "admin/comment" => "admin_pages#comments"
+  get "admin/article" => "admin_pages#articles"
+  get "admin/user" => "admin_pages#users"
   #get "signup"  => "users#new"
   resources :users
 
