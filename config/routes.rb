@@ -7,10 +7,9 @@ Rails.application.routes.draw do
   get "contact" => "static_pages#contact"
   #admin page
   get "admin/comment" => "admin_pages#comments"
-  get "admin/article" => "admin_pages#articles"
+  get "admin" => "admin_pages#articles"
+  # get "admin/article" => "admin_pages#articles"
   get "admin/user" => "admin_pages#users"
-  # If I visit /admin it goes to admin_pages#articles
-  #get "signup"  => "users#new"
   resources :users
 
   resources :articles do
