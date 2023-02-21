@@ -10,7 +10,7 @@ RSpec.describe "AdminPages", type: :request do
 
   describe "GET /articles" do
     it "returns http success" do
-      get "/admin/article"
+      get "/admin"
       expect(response).to have_http_status(:success)
     end
   end
