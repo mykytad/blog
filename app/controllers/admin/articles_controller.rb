@@ -1,16 +1,10 @@
-class AdminPagesController < ApplicationController
+class Admin::ArticlesController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_user
 
-  def comments
+  def index
+    @articles = Article.all
   end
-
-  def articles
-  end
-
-  def users
-  end
-
   def admin_user
     redirect_to(root_url) unless current_user.admin?
   end
