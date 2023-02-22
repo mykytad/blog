@@ -8,3 +8,6 @@ Style/EmptyMethod:
 
 Metrics/BlockLength:
   Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
