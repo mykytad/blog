@@ -13,6 +13,5 @@ RSpec.feature "create user", type: :feature do
     	expect(body).to have_link 'Log Out'
     	expect(body).to have_link 'Setting'
     	expect(body).to have_content 'Tomas'
-
 	end
 end
