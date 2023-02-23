@@ -1,14 +1,15 @@
+<% provide(:title, "Admin Articles") %>
 <div class="row">
 	<div class="col-3" style="background: #fff;border: 1px solid;">
 		<p>block for other admin pages</p>
 	</div>
 	<div class="col-9 admin-artile" style="border: 1px solid;">
 		<h3>Admin Articles</h3>
-		<ul class = "list-group adminArtile_list">
+		<ul class = "list-group admin_list">
 		  <% @articles.each do |article| %>
 		    <% unless article.archived? %>
 		      <li class = "list-group-item adminArtile_list_item ">
-		        <%= link_to article.title, article %>
+		        <%= link_to article.title, article, class:"admin_list_link" %>
 		      </li>
 		    <% end %>
 		  <% end %>
