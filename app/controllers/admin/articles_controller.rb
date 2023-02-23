@@ -1,14 +1,9 @@
-class AdminPagesController < ApplicationController
+class Admin::ArticlesController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_user
 
-  def comments
-  end
-
-  def articles
-  end
-
-  def users
+  def index
+    @articles = Article.all
   end
 
   def admin_user

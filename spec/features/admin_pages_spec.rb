@@ -1,0 +1,17 @@
+require 'rails_helper'
+RSpec.feature "create article", type: :feature do
+  it "visit admin articles pages" do
+    test_user
+    visit admin_articles_path
+
+    expect(body).to have_content 'Admin Articles'
+  end
+
+  def test_user
+    User.create(name: "Test", email: "test@example.com", password: "111111", admin: true)
+    visit new_user_session_path
+    fill_in :user_email, with: "test@example.com"
+    fill_in :user_password, with: "111111"
+    click_button "Log in"
+  end
+end

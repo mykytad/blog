@@ -5,11 +5,15 @@ Rails.application.routes.draw do
   get "help"    => "static_pages#help"
   get "about"   => "static_pages#about"
   get "contact" => "static_pages#contact"
+
   #admin page
-  get "admin/comment" => "admin_pages#comments"
-  get "admin" => "admin_pages#articles"
-  # get "admin/article" => "admin_pages#articles"
-  get "admin/user" => "admin_pages#users"
+  namespace :admin do
+    resources :articles, only: :index
+    # resources :comments, only: :index
+    # resources :users, only: :index
+    root "articles#index"
+  end
+
   resources :users
 
   resources :articles do
