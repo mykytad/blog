@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.feature "create article", type: :feature do
+RSpec.feature "admin pages", type: :feature do
   it "visit admin articles pages" do
     test_user
     visit admin_articles_path
