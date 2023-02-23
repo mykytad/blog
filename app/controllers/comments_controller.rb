@@ -8,7 +8,6 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.save  
     redirect_to article_path(@article)
-    
   end
 
   def destroy
