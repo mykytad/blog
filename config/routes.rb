@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   #admin page
   namespace :admin do
     resources :articles, only: :index
-    # resources :comments, only: :index
+    resources :comments, only: :index
     resources :users, only: :index
     root "articles#index"
   end
