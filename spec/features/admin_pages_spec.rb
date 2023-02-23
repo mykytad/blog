@@ -18,7 +18,7 @@ RSpec.feature "admin pages", type: :feature do
     test_user
     visit admin_comments_path
 
-    expect(body).to have_content 'Admin Connents'
+    expect(body).to have_content 'Admin Comments'
   end
 
   def test_user
