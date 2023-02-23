@@ -7,6 +7,13 @@ RSpec.feature "admin pages", type: :feature do
     expect(body).to have_content 'Admin Articles'
   end
 
+  it "visit admin users pages" do
+    test_user
+    visit admin_users_path
+
+    expect(body).to have_content 'Admin Users'
+  end
+
   def test_user
     User.create(name: "Test", email: "test@example.com", password: "111111", admin: true)
     visit new_user_session_path
