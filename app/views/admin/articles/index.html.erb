@@ -1,16 +1,25 @@
 <% provide(:title, "Admin Articles") %>
 <div class="row">
-	<div class="col-3" style="background: #fff;border: 1px solid;">
-		<p>block for other admin pages</p>
+	<div class="col-3 admin-side" style="background: #fff;border: 1px solid;">
+		<ul class="list-group list-group-flush admin-side_lis">
+			<li class="list-group-item list-group-item-action">
+	        	<%=  link_to "Articles", admin_articles_path, class:"admin_list_link" %> 
+			</li>
+			<li class="list-group-item list-group-item-action">
+	        	<%=  link_to "Comments", admin_comments_path, class:"admin_list_link" %> 
+			</li>
+			<li class="list-group-item list-group-item-action">
+	        	<%=  link_to "Users", admin_users_path, class:"admin_list_link" %> 
+			</li>
+		</ul>
 	</div>
 	<div class="col-9 admin-artile" style="border: 1px solid;">
-		<h3>Admin Articles</h3>
-		<ul class = "list-group admin_list">
+		<ul class = "list-group list-group-flush admin_list">
 		  <% @articles.each do |article| %>
 		    <% unless article.archived? %>
 		      <li class = "list-group-item adminArtile_list_item d-flex col-12 justify-content-between">
 		        	<%= link_to article.title, article, class:"col-9 admin_list_link" %>
-		        	<%=  link_to "Destroy", class:"col-3" %> 
+		        	<%=  link_to "Destroy","#", class:"col-1" %> 
 		      </li>
 		    <% end %>
 		  <% end %>
