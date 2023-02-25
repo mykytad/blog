@@ -7,8 +7,10 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = current_user.articles.find(params[:id])
+    @article = Article.find(params[:id])
     @article.destroy
+
+    redirect_to admin_articles_path
   end
 
   def admin_user
