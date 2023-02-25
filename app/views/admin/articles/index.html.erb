@@ -15,14 +15,14 @@
 	</div>
 	<div class="col-9 admin-artile" style="border: 1px solid;">
 		<ul class = "list-group list-group-flush admin_list">
-		  <% @articles.each do |article| %>
-		    <% unless article.archived? %>
-		      <li class = "list-group-item adminArtile_list_item d-flex col-12 justify-content-between">
-		        	<%= link_to article.title, article, class:"col-9 admin_list_link" %>
-		        	<%=  link_to "Destroy","#", class:"col-1" %> 
-		      </li>
-		    <% end %>
-		  <% end %>
+			<% @articles.each do |article| %>
+		    	<% unless article.archived? %>
+			    	<li class = "list-group-item adminArtile_list_item d-flex col-12 justify-content-between">
+			        	<%= link_to article.title, article, class:"col-9 admin_list_link" %>
+			        	<%=  link_to "Destroy",article, data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:"col-1" %> 
+			    	</li>
+		    	<% end %>
+			<% end %>
 		</ul>
 	</div>
 </div>
