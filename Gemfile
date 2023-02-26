@@ -74,9 +74,10 @@ end
 # style
 gem "sassc-rails"
 gem 'bootstrap'
+gem 'jquery-rails'
 
 # authentication
-gem 'devise', git: 'https://github.com/heartcombo/devise', branch: 'main'
+gem 'devise', "4.9.0"
 
 gem 'bcrypt'
 

@@ -3,6 +3,7 @@ class Admin::CommentsController < ApplicationController
   before_action :admin_user
 
   def index
+    @comments = Comment.all
   end
 
   def admin_user

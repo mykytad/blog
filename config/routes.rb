@@ -8,9 +8,9 @@ Rails.application.routes.draw do
 
   #admin page
   namespace :admin do
-    resources :articles, only: :index
+    resources :articles, only: [:index, :destroy]
     resources :comments, only: :index
-    resources :users, only: :index
+    resources :users, only: [:index, :destroy]
     root "articles#index"
   end
 

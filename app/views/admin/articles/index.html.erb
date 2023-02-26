@@ -1,12 +1,23 @@
-<div>
-	<h3>Admin Articles</h3>
-	<ul>
-	  <% @articles.each do |article| %>
-	    <% unless article.archived? %>
-	      <li>
-	        <%= link_to article.title, article %>
-	      </li>
-	    <% end %>
-	  <% end %>
-	</ul>
+<% provide(:title, "Admin Articles") %>
+<div class="row">
+	<%= render "admin/asaide" %>
+	<div class="col-9 admin-artile" style="border: 1px solid;">
+		<h3>Admin Articles</h3>
+		<ul class = "list-group list-group-flush admin_list">
+			<% @articles.each do |article| %>
+		    	<% unless article.archived? %>
+			    	<li class = "list-group-item adminArtile_list_item d-flex col-12 justify-content-between">
+			        	<%= link_to article.title, article, class:"col-4 admin_list_link"%>
+			        	<p class="col-1 admin_list_item">
+			        		<%= article.id %>
+			        	</p>
+			        	<p class="col-1 admin_list_item">
+			        		<%= article.user.name%>
+			        	</p>
+			        	<%=  link_to "Destroy",admin_article_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"col-1" %> 
+			    	</li>
+		    	<% end %>
+			<% end %>
+		</ul>
+	</div>
 </div>
