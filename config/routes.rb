@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :articles, only: [:index, :destroy]
     resources :comments, only: :index
-    resources :users, only: :index
+    resources :users, only: [:index, :destroy]
     root "articles#index"
   end
 
