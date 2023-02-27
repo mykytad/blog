@@ -2,6 +2,10 @@ class ApplicationController < ActionController::Base
   def index		
   end
 	
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?
+    end
+
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
 	protected
