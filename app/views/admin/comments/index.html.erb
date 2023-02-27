@@ -1,11 +1,23 @@
 <% provide(:title, "Admin Comments") %>
 <div class="row">
 	<%= render "admin/asaide" %>
-	<div class="col-9 admin-artile" style="border: 1px solid;">
+	<div class="col-10 admin-artile" style="border: 1px solid;">
 		<h3>Admin Comments</h3>
 		<ul class = "list-group admin_list">
-			<li>
-			</li>
+			<% @comments.each do |comment| %>
+				<li class = "list-group-item  d-flex col-12 justify-content-between">
+					<p class="col-5 admin_list_item">
+						<%= comment.body %>
+					</p>
+					<p class="col-1 admin_list_item">
+						<%= comment.id %>
+					</p>
+					<p class="col-1 admin_list_item">
+						<%= comment.user.name %>
+					</p>
+					<%= link_to "Destroy", admin_comment_path(comment), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"col-1" %>
+				</li>
+			<% end %>
 		</ul>
 	</div>
 </div>
