@@ -1,18 +1,18 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.feature "create article", type: :feature do
-  it 'creates a new article with valid attributes' do
+  it "creates a new article with valid attributes" do
     test_user
     visit new_article_path
     fill_in :article_title, with: "My first trip to Alaska"
     fill_in :article_body, with: "dsadsa dasd asd asd as d dsadasd as dasa"
     click_button "Create Article"
 
-    expect(body).to have_content 'Alaska'
-    expect(body).to have_content 'Comments'
+    expect(body).to have_content "Alaska"
+    expect(body).to have_content "Comments"
   end
 
-  it 'creates a new article and comment for it' do
+  it "creates a new article and comment for it" do
     test_user
     visit new_article_path
     fill_in :article_title, with: "My first trip to Alaska"
@@ -23,9 +23,9 @@ RSpec.feature "create article", type: :feature do
     fill_in :comment_body, with: "Thanks for sharing!"
     click_button "Create Comment"
 
-    expect(body).to have_content 'Test'
-    expect(body).to have_content 'Thanks for sharing'
-    expect(body).to have_link 'Destroy Comment'
+    expect(body).to have_content "Test"
+    expect(body).to have_content "Thanks for sharing"
+    expect(body).to have_link "Destroy Comment"
   end
 
   def test_user
