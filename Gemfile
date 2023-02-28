@@ -94,9 +94,8 @@ gem 'unicorn'
 #linter
 gem 'rubocop-rails', require: false
 
-#wpaginate
-gem 'will_paginate'
-gem 'bootstrap-will_paginate'
+# paginate
+gem 'kaminari'
 
 group :development do
   

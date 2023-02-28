@@ -3,7 +3,7 @@ class Admin::CommentsController < ApplicationController
   before_action :admin_user
 
   def index
-    @comments = Comment.all
+    @comments = Comment.order(:name).page params[:page]
   end
 
   def destroy
