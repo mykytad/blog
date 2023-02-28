@@ -2,7 +2,7 @@
 lock "~> 3.17.1"
 
 set :application, "my_app_name"
-set :repo_url, "git@gitlab.com:dynnikm1/blog.git"
+set :repo_url, "git@gitlab.com:dynnikm/blog.git"
 
 set :branch, :main
 set :rvm_ruby_version, "ruby-3.1.3"
