@@ -71,6 +71,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
 # style
 gem "sassc-rails"
 gem 'bootstrap'
@@ -97,6 +98,10 @@ gem 'rubocop-rails', require: false
 
 # paginate
 gem 'kaminari'
+
+group :development, :test do
+  gem 'pry-rails'
+end
 
 group :development do
   
