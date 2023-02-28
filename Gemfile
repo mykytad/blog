@@ -94,6 +94,10 @@ gem 'unicorn'
 #linter
 gem 'rubocop-rails', require: false
 
+#wpaginate
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
 group :development do
   
   gem "capistrano", "~> 3.10", require: false
