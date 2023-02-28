@@ -3,22 +3,49 @@
 	<%= render "admin/asaide" %>
 	<div class="col-9 admin-artile" style="border: 1px solid;">
 		<h3>Admin Articles</h3>
-		<ul class = "list-group list-group-flush admin_list">
-			<% @articles.each do |article| %>
-		    	<% unless article.archived? %>
-			    	<li class = "list-group-item d-flex col-12 justify-content-between">
-			        	<%= link_to article.title, article, class:"col-4 admin_list_link"%>
-			        	<p class="col-1 admin_list_item">
-			        		<%= article.id %>
-			        	</p>
-			        	<p class="col-1 admin_list_item">
-			        		<%= article.user.name%>
-			        	</p>
-			        	<%=  link_to "Destroy",admin_article_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"col-1" %> 
-			    	</li>
-		    	<% end %>
-			<% end %>
-		</ul>
+		<nav>
+			<div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+				<button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Public</button>
+				<button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" tabindex="-1">Archived</button>
+			</div>
+		</nav>
+		<div class="tab-content" id="nav-tabContent">
+			<ul class = "list-group list-group-flush admin_list tab-pane fade active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+				<% @articles.each do |article| %>
+			    	<% unless article.archived? %>
+				    	<li class = "list-group-item d-flex col-12 justify-content-between">
+				        	<%= link_to article.title, article, class:"col-4 admin_list_link"%>
+				        	<p class="col-1 admin_list_item">
+				        		<%= article.id %>
+				        	</p>
+				        	<p class="col-1 admin_list_item">
+				        		<%= article.user.name%>
+				        	</p>
+				        	<%=  link_to "Destroy",admin_article_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"col-1" %> 
+				    	</li>
+			    	<% end %>
+				<% end %>
+			</ul>
+			<!-- <%= paginate @articles %> -->
+		</div>
+		<div class="tab-content" id="nav-tabContent">
+			<ul class = "list-group list-group-flush admin_list tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+				<% @articles.each do |article| %>
+			    	<% unless article.archived? %>
+				    	<li class = "list-group-item d-flex col-12 justify-content-between">
+				        	<%= link_to article.title, article, class:"col-4 admin_list_link"%>
+				        	<p class="col-1 admin_list_item">
+				        		<%= article.id %>
+				        	</p>
+				        	<p class="col-1 admin_list_item">
+				        		<%= article.user.name%>
+				        	</p>
+				        	<%=  link_to "Destroy",admin_article_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"col-1" %> 
+				    	</li>
+			    	<% end %>
+				<% end %>
+			</ul>
 			<%= paginate @articles %>
+		</div>
 	</div>
 </div>
