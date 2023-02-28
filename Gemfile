@@ -75,6 +75,7 @@ end
 gem "sassc-rails"
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'popper_js'
 
 # authentication
 gem 'devise', "4.9.0"
@@ -93,6 +94,9 @@ gem 'unicorn'
 
 #linter
 gem 'rubocop-rails', require: false
+
+# paginate
+gem 'kaminari'
 
 group :development do
   

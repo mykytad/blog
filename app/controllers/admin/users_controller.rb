@@ -3,7 +3,7 @@ class Admin::UsersController < ApplicationController
   before_action :admin_user
 
   def index
-    @users = User.all
+    @users = User.order(:name).page params[:page]
   end
 
   def destroy
