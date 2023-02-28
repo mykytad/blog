@@ -417,6 +417,7 @@ DEPENDENCIES
   mini_magick
   net-ssh!
   paperclip
+  popper_js
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
   rspec-rails

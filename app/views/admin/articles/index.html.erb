@@ -5,12 +5,12 @@
 		<h3>Admin Articles</h3>
 		<nav>
 			<div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
-				<button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Public</button>
-				<button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" tabindex="-1">Archived</button>
+				<button class="nav-link active" id="nav-public-tab" data-bs-toggle="tab" data-bs-target="#nav-public" type="button" role="tab" aria-controls="nav-public" aria-selected="true">Public</button>
+				<button class="nav-link" id="nav-archived-tab" data-bs-toggle="tab" data-bs-target="#nav-archived" type="button" role="tab" aria-controls="nav-archived" aria-selected="false" tabindex="-1">Archived</button>
 			</div>
 		</nav>
 		<div class="tab-content" id="nav-tabContent">
-			<ul class = "list-group list-group-flush admin_list tab-pane fade active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+			<ul class = "list-group list-group-flush admin_list tab-pane fade active show" id="nav-public" role="tabpanel" aria-labelledby="nav-public-tab">
 				<% @articles.each do |article| %>
 			    	<% unless article.archived? %>
 				    	<li class = "list-group-item d-flex col-12 justify-content-between">
@@ -29,7 +29,7 @@
 			<!-- <%= paginate @articles %> -->
 		</div>
 		<div class="tab-content" id="nav-tabContent">
-			<ul class = "list-group list-group-flush admin_list tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+			<ul class = "list-group list-group-flush admin_list tab-pane fade" id="nav-archived" role="tabpanel" aria-labelledby="nav-archived-tab">
 				<% @articles.each do |article| %>
 			    	<% unless article.archived? %>
 				    	<li class = "list-group-item d-flex col-12 justify-content-between">

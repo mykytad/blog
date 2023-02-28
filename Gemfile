@@ -75,6 +75,7 @@ end
 gem "sassc-rails"
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'popper_js'
 
 # authentication
 gem 'devise', "4.9.0"
