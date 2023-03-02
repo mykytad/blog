@@ -3,16 +3,29 @@
 	<%= render "admin/asaide" %>
 	<div class="col-9 admin-artile" style="border: 1px solid;">
 		<h3>Admin Articles</h3>
-		<nav>
-			<ul class="nav">
-			  <li class="nav-item">
-			  	<%= link_to "Public",admin_articles_path(status: :public), class:"nav-link" %>
-			  </li>
-			  <li class="nav-item">
-				<%= link_to "Archived",admin_articles_path(status: :archived), class:"nav-link" %>
-				</li>
-			</ul>
-		</nav>
+		<div class="d-flex row">
+			<nav class="col-8">
+				<ul class="nav">
+					<li class="nav-item">
+				  		<%= link_to "Public",admin_articles_path(status: :public), class:"nav-link" %>
+					</li>
+					<li class="nav-item">
+						<%= link_to "Archived",admin_articles_path(status: :archived), class:"nav-link" %>
+					</li>
+					<li class="nav-item">
+					<%= link_to "Private",admin_articles_path(status: :private), class:"nav-link" %>
+					</li>
+				</ul>
+			</nav>
+			<div class="col-4 search_wrap ">
+				<%= form_with model: @article do |form| %>
+				<div class="d-flex">
+					<%= form.text_field :search, placeholder:"Search", class:"form-control me-2" %>
+					<%= link_to "Search",admin_articles_path() ,class:"btn btn-outline-dark" %>
+				</div>
+				<% end %>
+			</div>
+		</div>
 		<div class="tab-content" id="nav-tabContent">
 			<ul class = "list-group list-group-flush admin_list tab-pane fade active show" id="nav-public" role="tabpanel" aria-labelledby="nav-public-tab">
 				<% @articles.each do |article| %>
