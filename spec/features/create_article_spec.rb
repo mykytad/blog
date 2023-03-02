@@ -1,8 +1,14 @@
 require "rails_helper"
+require "shared_methods"
 
 RSpec.feature "create article", type: :feature do
+  include SharedMethods
+
+  before do
+    log_in(test_user)
+  end
+
   it "creates a new article with valid attributes" do
-    test_user
     visit new_article_path
     fill_in :article_title, with: "My first trip to Alaska"
     fill_in :article_body, with: "dsadsa dasd asd asd as d dsadasd as dasa"
@@ -13,26 +19,16 @@ RSpec.feature "create article", type: :feature do
   end
 
   it "creates a new article and comment for it" do
-    test_user
     visit new_article_path
     fill_in :article_title, with: "My first trip to Alaska"
     fill_in :article_body, with: "dsadsa dasd asd asd as d dsadasd as dasa"
     click_button "Create Article"
 
-    # fill_in :comment_commenter, with: "John"
     fill_in :comment_body, with: "Thanks for sharing!"
     click_button "Create Comment"
 
-    expect(body).to have_content "Test"
+    expect(body).to have_content "Tomas"
     expect(body).to have_content "Thanks for sharing"
     expect(body).to have_link "Destroy Comment"
-  end
-
-  def test_user
-    User.create(name:"Test", email:"test@example.com", password:"111111")
-    visit new_user_session_path
-    fill_in :user_email, with: "test@example.com"
-    fill_in :user_password, with: "111111"
-    click_button "Log in"
   end
 end
