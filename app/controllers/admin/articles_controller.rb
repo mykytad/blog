@@ -3,7 +3,8 @@ class Admin::ArticlesController < ApplicationController
   before_action :admin_user
 
   def index
-    @articles = Article.order(:name).page params[:page]
+    status = params[:status]
+    @articles = Article.order(:name).where(status: status).page(params[:page])
     # @articles = Article.all
   end
 
