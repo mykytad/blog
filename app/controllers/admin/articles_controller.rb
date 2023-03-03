@@ -5,8 +5,9 @@ class Admin::ArticlesController < ApplicationController
   def index
     status = params[:status]
     @articles = Article.order(:name).where(status: status).page(params[:page])
+    # Article.where("title = ?", params[:title])
     # @articles = Article.all
-  end
+  end 
 
   def destroy
     @article = Article.find(params[:id])
