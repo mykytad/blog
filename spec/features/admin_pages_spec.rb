@@ -11,7 +11,7 @@ RSpec.feature "admin pages", type: :feature do
   it "visit admin articles pages" do
     test_article
 
-    visit admin_articles_path
+    visit admin_articles_path(status: :public)
 
     expect(body).to have_content "Admin Articles"
     expect(body).to have_content "My first trip to Alaska"

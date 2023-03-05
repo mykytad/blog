@@ -11,3 +11,12 @@ Metrics/BlockLength:
 
 Style/ClassAndModuleChildren:
   Enabled: false
+
+Style/HashSyntax:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false

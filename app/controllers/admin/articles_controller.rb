@@ -3,7 +3,17 @@ class Admin::ArticlesController < ApplicationController
   before_action :admin_user
 
   def index
-    @articles = Article.order(:name).page params[:page]
+    status = params[:status]
+    if status.nil?
+      status = "public"
+    end
+    @articles = Article.order(:name)
+    @articles = @articles.where(status: status)
+    if !params[:search].nil? && params[:search] != ""
+      @articles = @articles.where(title: params[:search])
+    end
+    @articles = @articles.page(params[:page])
+    # Article.where("title = ?", params[:title])
     # @articles = Article.all
   end
 
