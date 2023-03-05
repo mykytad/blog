@@ -14,3 +14,9 @@ Style/ClassAndModuleChildren:
 
 Style/HashSyntax:
   Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false

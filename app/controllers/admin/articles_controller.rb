@@ -4,18 +4,18 @@ class Admin::ArticlesController < ApplicationController
 
   def index
     status = params[:status]
-    if status == nil
-      status = "public"      
+    if status.nil?
+      status = "public"
     end
     @articles = Article.order(:name)
     @articles = @articles.where(status: status)
-    if params[:search] != nil && params[:search] != ""
+    if !params[:search].nil? && params[:search] != ""
       @articles = @articles.where(title: params[:search])
     end
     @articles = @articles.page(params[:page])
     # Article.where("title = ?", params[:title])
     # @articles = Article.all
-  end 
+  end
 
   def destroy
     @article = Article.find(params[:id])
