@@ -27,6 +27,18 @@
 			</div>
 		</div>
 		<div class="tab-content" id="nav-tabContent">
+			<div class="d-flex col-12 justify-content-between">
+				<p class = "list-group-item col-4">
+					Article title
+				</p>
+				<p class = "col-1">
+					Article ID
+				</p>
+				<p class = "col-2">
+					Article creator
+				</p>
+				<p class="col-1"></p>
+			</div>
 			<ul class = "list-group list-group-flush admin_list tab-pane fade active show" id="nav-public" role="tabpanel" aria-labelledby="nav-public-tab">
 				<% @articles.each do |article| %>
 				    	<li class = "list-group-item d-flex col-12 justify-content-between">
