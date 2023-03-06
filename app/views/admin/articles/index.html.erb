@@ -1,19 +1,19 @@
 <% provide(:title, "Admin Articles") %>
 <div class="row">
-	<%= render "admin/asaide" %>
-	<div class="col-9 admin-artile" style="border: 1px solid;">
+	<%= render "admin/side" %>
+	<div class="col-9 admin-artile">
 		<h3>Admin Articles</h3>
 		<div class="d-flex row">
 			<nav class="col-8">
 				<ul class="nav">
 					<li class="nav-item">
-				  		<%= link_to "Public",admin_articles_path(status: :public), class:"nav-link" %>
+				  		<%= link_to "Public",admin_articles_path(status: :public), class:"nav-link btn btn-outline-secondary admin_tab_item_link" %>
+					</li>
+					<li class="nav-item admin_tab_item">
+						<%= link_to "Archived",admin_articles_path(status: :archived), class:"nav-link btn btn-outline-secondary admin_tab_item_link" %>
 					</li>
 					<li class="nav-item">
-						<%= link_to "Archived",admin_articles_path(status: :archived), class:"nav-link" %>
-					</li>
-					<li class="nav-item">
-					<%= link_to "Private",admin_articles_path(status: :private), class:"nav-link" %>
+					<%= link_to "Private",admin_articles_path(status: :private), class:"nav-link btn btn-outline-secondary admin_tab_item_link" %>
 					</li>
 				</ul>
 			</nav>
@@ -21,7 +21,7 @@
 				<%= form_tag(admin_articles_path, method: :get) do %>
 				<div class="d-flex">
 					<%= text_field_tag "search", params[:search], placeholder: "Search article title", class:"form-control me-2" %>
-					<%= submit_tag "Search", class:"btn btn-outline-dark" %>
+					<%= submit_tag "Search", class:"btn btn-outline-secondary" %>
 				</div>
 				<% end %>
 			</div>

@@ -3,7 +3,13 @@ class Admin::CommentsController < ApplicationController
   before_action :admin_user
 
   def index
-    @comments = Comment.order(:name).page params[:page]
+    status = params[:status]
+    if status.nil?
+      status = "public"
+    end
+    @comments = Comment.order(:name)
+    @comments = @comments.where(status: status)
+    @comments = @comments.page params[:page]
   end
 
   def destroy
