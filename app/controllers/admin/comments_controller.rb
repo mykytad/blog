@@ -7,6 +7,7 @@ class Admin::CommentsController < ApplicationController
     if status.nil?
       status = "public"
     end
+
     @comments = Comment.order(:name)
     @comments = @comments.where(status: status)
     @comments = @comments.page params[:page]

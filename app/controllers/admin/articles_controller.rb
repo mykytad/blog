@@ -7,11 +7,14 @@ class Admin::ArticlesController < ApplicationController
     if status.nil?
       status = "public"
     end
+
     @articles = Article.order(:name)
     @articles = @articles.where(status: status)
+
     if !params[:search].nil? && params[:search] != ""
-      @articles = @articles.where(title: params[:search])
+      @articles = @articles.where("lower(title) like ?", "%#{params[:search].downcase}%")
     end
+
     @articles = @articles.page(params[:page])
     # Article.where("title = ?", params[:title])
     # @articles = Article.all
