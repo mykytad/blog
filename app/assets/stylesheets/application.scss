@@ -40,6 +40,20 @@ margin: 0;
 .commennt_add{
   margin-top: 10px;
 }
+.admin_tab_item{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.admin_tab_item_link{
+/*  color:#6c757d;*/
+}
+.admin_tab_item_link:hover{
+/*  color:#fff;*/
+}
+.said_admin{
+  background: #f8f9fa; 
+  color:#212529bf;
+}
 .admin_list{
   margin-bottom: 10px;
 }
@@ -54,4 +68,10 @@ margin: 0;
 .admin_list_item{
   color: grey;
   margin: 0;
+}
+.admin_col_wrap{
+  margin-top: 10px;
+}
+.admin_col_heading{
+  font-size: 15px;
 }

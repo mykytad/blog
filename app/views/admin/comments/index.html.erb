@@ -1,16 +1,39 @@
 <% provide(:title, "Admin Comments") %>
 <div class="row">
-	<%= render "admin/asaide" %>
-	<div class="col-10 admin-artile" style="border: 1px solid;">
+	<%= render "admin/side" %>
+	<div class="col-10 admin-artile">
 		<h3>Admin Comments</h3>
-		<div class="d-flex col-12 justify-content-between">
-			<p class = "list-group-item col-5">
+		<div class="d-flex row">
+			<nav class="col-8">
+				<ul class="nav">
+					<li class="nav-item">
+				  		<%= link_to "Public",admin_comments_path(status: :public), class:"nav-link btn btn-outline-secondary admin_tab_item_link" %>
+					</li>
+					<li class="nav-item admin_tab_item">
+						<%= link_to "Archived",admin_comments_path(status: :archived), class:"nav-link btn btn-outline-secondary admin_tab_item_link" %>
+					</li>
+					<li class="nav-item">
+					<%= link_to "Private",admin_comments_path(status: :private), class:"nav-link btn btn-outline-secondary admin_tab_item_link" %>
+					</li>
+				</ul>
+			</nav>
+			<div class="col-4 search_wrap ">
+				<%= form_tag(admin_comments_path, method: :get) do %>
+				<div class="d-flex">
+					<%= text_field_tag "search", params[:search], placeholder: "Search article title", class:"form-control me-2" %>
+					<%= submit_tag "Search", class:"btn btn-outline-secondary" %>
+				</div>
+				<% end %>
+			</div>
+		</div>
+		<div class="d-flex col-12 justify-content-between admin_col_wrap">
+			<p class = "col-5 admin_col_heading">
 				Comment body
 			</p>
-			<p class = "col-1">
+			<p class = "col-1 admin_col_heading">
 				Comment ID
 			</p>
-			<p class = "col-2">
+			<p class = "col-2 admin_col_heading">
 				Comment creator
 			</p>
 			<p class="col-1"></p>

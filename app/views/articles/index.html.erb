@@ -1,6 +1,7 @@
 <h1>Articles</h1>
+<%= link_to "New Article", new_article_path %>
 
-Our blog has <%= Article.public_count %> articles and counting!
+<p>Our blog has <%= Article.public_count %> articles and counting!</p>
 
 <ul class="list-group">
   <% @articles.each do |article| %>
@@ -9,5 +10,4 @@ Our blog has <%= Article.public_count %> articles and counting!
     </li>
   <% end %>
 </ul>
-
-<%= link_to "New Article", new_article_path %>
+<%= paginate @articles %>

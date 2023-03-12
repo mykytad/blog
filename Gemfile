@@ -99,6 +99,8 @@ gem 'rubocop-rails', require: false
 # paginate
 gem 'kaminari'
 
+#search
+
 group :development, :test do
   gem 'pry-rails'
 end
