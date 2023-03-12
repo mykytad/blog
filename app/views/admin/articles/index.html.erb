@@ -5,15 +5,15 @@
 		<h3>Admin Articles</h3>
 		<div class="d-flex row">
 			<nav class="col-8">
-				<ul class="nav">
+				<ul class="nav nav-pills">
 					<li class="nav-item">
-				  		<%= link_to "Public",admin_articles_path(status: :public), class:"nav-link btn btn-outline-secondary admin_tab_item_link" %>
+				  		<%= link_to "Public",admin_articles_path(status: :public), class:"nav-link active admin_tab_item_link" %>
 					</li>
 					<li class="nav-item admin_tab_item">
-						<%= link_to "Archived",admin_articles_path(status: :archived), class:"nav-link btn btn-outline-secondary admin_tab_item_link" %>
+						<%= link_to "Archived",admin_articles_path(status: :archived), class:"nav-link admin_tab_item_link" %>
 					</li>
 					<li class="nav-item">
-					<%= link_to "Private",admin_articles_path(status: :private), class:"nav-link btn btn-outline-secondary admin_tab_item_link" %>
+					<%= link_to "Private",admin_articles_path(status: :private), class:"nav-link admin_tab_item_link" %>
 					</li>
 				</ul>
 			</nav>
