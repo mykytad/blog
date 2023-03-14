@@ -15,9 +15,25 @@ class Admin::ArticlesController < ApplicationController
       @articles = @articles.where("lower(title) like ?", "%#{params[:search].downcase}%")
     end
 
+    if params[:sort] == "created_at_asc"
+      @articles = @articles.order("created_at ASC")
+    end
+    if params[:sort] == "created_at_desc"
+      @articles = @articles.order("created_at DESC")
+    end
+    if params[:sort] == "updated_at_desc"
+      @articles = @articles.order("updated_at DESC")
+    end
+    # @articles = @articles.order("updated_at ASC")
+    # @articles = @articles.order("id DESC")
+    # @articles = @articles.order("id ASC")
+    author_id = params[:author]
+
+    if author_id
+      @articles = @articles.where(user_id: author_id)
+    end
+
     @articles = @articles.page(params[:page])
-    # Article.where("title = ?", params[:title])
-    # @articles = Article.all
   end
 
   def destroy
