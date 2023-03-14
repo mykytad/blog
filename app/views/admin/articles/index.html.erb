@@ -7,17 +7,22 @@
 			<nav class="col-8">
 				<ul class="nav nav-pills">
 					<li class="nav-item">
-				  		<%= link_to "Public",admin_articles_path(status: :public), class:"nav-link active admin_tab_item_link" %>
+						<%= link_to "Public",admin_articles_path(status: :public), class:"nav-link admin_tab_item_link #{'active' if params[:status] == "public" || params[:status].nil?}" %>
 					</li>
 					<li class="nav-item admin_tab_item">
-						<%= link_to "Archived",admin_articles_path(status: :archived), class:"nav-link admin_tab_item_link" %>
+						<%= link_to "Archived",admin_articles_path(status: :archived), class:"nav-link admin_tab_item_link #{'active' if params[:status] == "archived" }" %>
 					</li>
 					<li class="nav-item">
-					<%= link_to "Private",admin_articles_path(status: :private), class:"nav-link admin_tab_item_link" %>
+						<%= link_to "Private",admin_articles_path(status: :private), class:"nav-link admin_tab_item_link #{'active' if params[:status] == "private" }" %>
 					</li>
 				</ul>
 			</nav>
-			<div class="col-4 search_wrap ">
+			<div>
+				<%= link_to "created_at ASC",admin_articles_path(sort: :created_at_asc) %>
+				<%= link_to "created_at DESC",admin_articles_path(sort: :created_at_desc) %>
+				<%= link_to "updated_at DESC",admin_articles_path(sort: :updated_at_desc) %>
+			</div>
+			<div class="col-4 search_wrap">
 				<%= form_tag(admin_articles_path, method: :get) do %>
 				<div class="d-flex">
 					<%= text_field_tag "search", params[:search], placeholder: "Search article title", class:"form-control me-2" %>
@@ -38,6 +43,9 @@
 				<p class = "col-2 admin_col_heading">
 					Article creator
 				</p>
+				<p class = "col-1 admin_col_heading">
+					created at
+				</p>
 				<p class="col-1"></p>
 			</div>
 			<ul class = "list-group list-group-flush admin_list tab-pane fade active show" id="nav-public" role="tabpanel" aria-labelledby="nav-public-tab">
@@ -49,6 +57,9 @@
 				        	</p>
 				        	<p class="col-1 admin_list_item">
 				        		<%= article.user.name%>
+				        	</p>
+							<p class="col-1 admin_list_item">
+				        		<%= article.created_at.to_s(:short) %>
 				        	</p>
 				        	<%=  link_to "Destroy",admin_article_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"col-1" %> 
 				    	</li>

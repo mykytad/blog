@@ -20,3 +20,6 @@ Metrics/AbcSize:
 
 Style/IfUnlessModifier:
   Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
