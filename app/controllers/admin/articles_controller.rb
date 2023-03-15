@@ -18,15 +18,27 @@ class Admin::ArticlesController < ApplicationController
     if params[:sort] == "created_at_asc"
       @articles = @articles.order("created_at ASC")
     end
+
     if params[:sort] == "created_at_desc"
       @articles = @articles.order("created_at DESC")
     end
+
+    if params[:sort] == "updated_at_asc"
+      @articles = @articles.order("updated_at ASC")
+    end
+
     if params[:sort] == "updated_at_desc"
       @articles = @articles.order("updated_at DESC")
     end
-    # @articles = @articles.order("updated_at ASC")
-    # @articles = @articles.order("id DESC")
-    # @articles = @articles.order("id ASC")
+
+    if params[:sort] == "id_desc"
+      @articles = @articles.order("id DESC")
+    end
+
+    if params[:sort] == "id_asc"
+      @articles = @articles.order("id ASC")
+    end
+
     author_id = params[:author]
 
     if author_id
